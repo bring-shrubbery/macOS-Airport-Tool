@@ -29,6 +29,10 @@ This project was made in Xcode 9.4.1 so it's encouraged to use this or a newer v
 - Put all .swift files into the sources folder
 - Run ```swift run wifiScanner```
 
+## Usage
+
+For now, when you run the executable you can only provide interface name and command to scan for networks ```wifiScanner en0 -s``` or just provide scan command to use default interface ```wifiScanner -s```.
+
 ## Built With
 
 * [Xcode](https://developer.apple.com/xcode/) - development IDE

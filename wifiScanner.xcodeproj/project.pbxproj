@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E8DBFED2112F74000550BE2 /* macOS airport tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "macOS airport tool"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E8DBFED2112F74000550BE2 /* wifiScanner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wifiScanner; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8DBFF02112F74000550BE2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2E8DBFF72112F77E00550BE2 /* usageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usageInfo.swift; sourceTree = "<group>"; };
 		2E8DBFF92112F7A200550BE2 /* scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scanner.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		2E8DBFE42112F73F00550BE2 = {
 			isa = PBXGroup;
 			children = (
-				2E8DBFEF2112F74000550BE2 /* macOS airport tool */,
+				2E8DBFEF2112F74000550BE2 /* wifiScanner */,
 				2E8DBFEE2112F74000550BE2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,27 +53,27 @@
 		2E8DBFEE2112F74000550BE2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E8DBFED2112F74000550BE2 /* macOS airport tool */,
+				2E8DBFED2112F74000550BE2 /* wifiScanner */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E8DBFEF2112F74000550BE2 /* macOS airport tool */ = {
+		2E8DBFEF2112F74000550BE2 /* wifiScanner */ = {
 			isa = PBXGroup;
 			children = (
 				2E8DBFF02112F74000550BE2 /* main.swift */,
 				2E8DBFF72112F77E00550BE2 /* usageInfo.swift */,
 				2E8DBFF92112F7A200550BE2 /* scanner.swift */,
 			);
-			path = "macOS airport tool";
+			path = wifiScanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E8DBFEC2112F74000550BE2 /* macOS airport tool */ = {
+		2E8DBFEC2112F74000550BE2 /* wifiScanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E8DBFF42112F74000550BE2 /* Build configuration list for PBXNativeTarget "macOS airport tool" */;
+			buildConfigurationList = 2E8DBFF42112F74000550BE2 /* Build configuration list for PBXNativeTarget "wifiScanner" */;
 			buildPhases = (
 				2E8DBFE92112F74000550BE2 /* Sources */,
 				2E8DBFEA2112F74000550BE2 /* Frameworks */,
@@ -83,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = "macOS airport tool";
+			name = wifiScanner;
 			productName = "macOS airport tool";
-			productReference = 2E8DBFED2112F74000550BE2 /* macOS airport tool */;
+			productReference = 2E8DBFED2112F74000550BE2 /* wifiScanner */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2E8DBFE82112F73F00550BE2 /* Build configuration list for PBXProject "macOS airport tool" */;
+			buildConfigurationList = 2E8DBFE82112F73F00550BE2 /* Build configuration list for PBXProject "wifiScanner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E8DBFEC2112F74000550BE2 /* macOS airport tool */,
+				2E8DBFEC2112F74000550BE2 /* wifiScanner */,
 			);
 		};
 /* End PBXProject section */
@@ -268,7 +268,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E8DBFE82112F73F00550BE2 /* Build configuration list for PBXProject "macOS airport tool" */ = {
+		2E8DBFE82112F73F00550BE2 /* Build configuration list for PBXProject "wifiScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E8DBFF22112F74000550BE2 /* Debug */,
@@ -277,7 +277,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E8DBFF42112F74000550BE2 /* Build configuration list for PBXNativeTarget "macOS airport tool" */ = {
+		2E8DBFF42112F74000550BE2 /* Build configuration list for PBXNativeTarget "wifiScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E8DBFF52112F74000550BE2 /* Debug */,
