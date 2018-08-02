@@ -13,10 +13,8 @@ and then make a symbolic link to that directory:
 sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 ```
 
-##Goal of the project
+### Goal of the project
 The goal is to make a perfect copy of the original tool, so someone who is curious how it approximately was made could look into source code and learn something, so the contribution is highly appreciated.
-
-## Getting Started
 
 Feel free to modify the project and submit pull requests, but remember what the goal of this project is!
 
