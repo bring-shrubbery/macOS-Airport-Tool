@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E8DBFF12112F74000550BE2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DBFF02112F74000550BE2 /* main.swift */; };
+		2E8DBFF82112F77E00550BE2 /* usageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DBFF72112F77E00550BE2 /* usageInfo.swift */; };
+		2E8DBFFA2112F7A200550BE2 /* scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DBFF92112F7A200550BE2 /* scanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		2E8DBFED2112F74000550BE2 /* macOS airport tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "macOS airport tool"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8DBFF02112F74000550BE2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2E8DBFF72112F77E00550BE2 /* usageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usageInfo.swift; sourceTree = "<group>"; };
+		2E8DBFF92112F7A200550BE2 /* scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				2E8DBFF02112F74000550BE2 /* main.swift */,
+				2E8DBFF72112F77E00550BE2 /* usageInfo.swift */,
+				2E8DBFF92112F7A200550BE2 /* scanner.swift */,
 			);
 			path = "macOS airport tool";
 			sourceTree = "<group>";
@@ -119,7 +125,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8DBFFA2112F7A200550BE2 /* scanner.swift in Sources */,
 				2E8DBFF12112F74000550BE2 /* main.swift in Sources */,
+				2E8DBFF82112F77E00550BE2 /* usageInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

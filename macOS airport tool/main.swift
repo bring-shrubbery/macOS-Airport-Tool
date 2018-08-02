@@ -6,7 +6,25 @@
 //  Copyright © 2018 Vincent Rodriguez. All rights reserved.
 //
 
-import Foundation
+func printUsage() {
+    //get usage info and print it
+    let usageInfo = UsageInfo()
+    print(usageInfo.usageInfoData)
+}
 
-print("Hello, World!")
-
+if(CommandLine.arguments.count < 2 ) {
+    printUsage()
+} else {
+    //setup scanner only if some arguments are provided
+    let scanner = Scanner()
+    
+    if(CommandLine.arguments[1] == "-s") {
+        //standard scan argument
+        scanner.scanNetworksClassic(nil)
+    } else if(CommandLine.arguments.count < 4) {
+        //standard scan with custom interface
+        if(CommandLine.arguments[2] == "-s") {
+            scanner.scanNetworksClassic(CommandLine.arguments[1])
+        }
+    }
+}
