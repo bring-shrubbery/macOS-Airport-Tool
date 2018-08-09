@@ -9,49 +9,53 @@
 import Foundation
 import CoreWLAN
 
-//struct for standard network data storage
-struct standardNetworkData {
+// Struct for standard network data storage
+class standardNetworkData {
     let ssid: String
     let bssid: String
     let rssi: Int
     let channel: Int
     let ht: Bool
     let cc: String
+    let ibss: Bool
     var security: String = ""
     
-    init(_ network: CWNetwork) {
-        //set SSID
+    init (_ network: CWNetwork) {
+        // Set SSID
         if let ssid = network.ssid {
             self.ssid = ssid
         } else {
             self.ssid = "unknown"
         }
         
-        //set BSSID
+        // Set BSSID
         if let bssid = network.bssid {
             self.bssid = bssid
         } else {
             self.bssid = "unknown"
         }
         
-        //set RSSI
+        // Set RSSI
         self.rssi = network.rssiValue
         
-        //set CHANNEL
+        // Set CHANNEL
         self.channel = network.wlanChannel.channelNumber
         
-        //set High Throughput
+        // Set High Throughput
         self.ht = network.supportsPHYMode(CWPHYMode.mode11n)
         
-        //set Country Code
+        // Set Country Code
         if let countryCode = network.countryCode {
             self.cc = countryCode
         } else {
             self.cc = "--"
         }
         
-        //set Security Type
-        //TODO: Figure Out All Postfixes
+        // Set IBSS indicator
+        self.ibss = network.ibss
+        
+        // Set Security Type
+        // TODO: Figure Out All Postfixes
         var numOfProtocols = 0
         if(network.supportsSecurity(CWSecurity.wpaPersonal)) {
             self.security += "WPA (PSK/"
@@ -85,16 +89,16 @@ struct standardNetworkData {
 }
 
 class Scanner {
-    //initialise wifi client
+    // Initialise wifi client
     var wifi: CWWiFiClient?
     
-    //initialise on startup
-    init() {
+    // Initialise on startup
+    init () {
         self.wifi = CWWiFiClient()
     }
     
-    //create a number of spaces
-    func spaces(_ num: Int) -> String {
+    // Create a number of spaces
+    func spaces (_ num: Int) -> String {
         var returnString = ""
         for _ in 0...num {
             returnString = returnString + " "
@@ -102,7 +106,7 @@ class Scanner {
         return returnString
     }
     
-    public func scanNetworksClassic(_ interfaceName: String?) {
+    public func scanNetworksClassic (_ interfaceName: String?) {
         if let intName = interfaceName {
             if let interface = self.wifi?.interface(withName: intName) {
                 //attpempt to scan for networks
@@ -118,32 +122,60 @@ class Scanner {
         }
     }
     
-    func standardScan(_ interface: CWInterface) {
+    func printStandardTableHeader () {
+        // Print header of the table
+        print(spaces(27), terminator: "")
+        print("SSID", "BSSID\(spaces(11))", "RSSI", "CHANNEL", "HT", "CC", "SECURITY (auth/unicast/group)", separator: " ")
+    }
+    
+    func printNetworkData (_ networkData: standardNetworkData) {
+        // SSID identation (to make first column align to the right)
+        print(spaces(31-networkData.ssid.count), terminator:"")
+        
+        // Print retrieved data table
+        print(  networkData.ssid,
+                networkData.bssid,
+                "\(networkData.rssi)\(spaces(3-String(networkData.rssi).count))",
+            "\(networkData.channel)\(spaces(6-String(networkData.channel).count))",
+            networkData.ht ? "Y " : "N ",
+            "\(networkData.cc)",
+            networkData.security, separator: " ")
+    }
+    
+    func standardScan (_ interface: CWInterface) {
         do {
             let networks = try interface.scanForNetworks(withName: nil, includeHidden: true)
+            var ibssNetworks:[standardNetworkData] = []
             
-            //print header of the table
-            print(spaces(27), terminator: "")
-            print("SSID", "BSSID\(spaces(11))", "RSSI", "CHANNEL", "HT", "CC", "SECURITY (auth/unicast/group)", separator: " ")
+            printStandardTableHeader()
             
+            // Go through each network one by one
             networks.forEach { (network) in
-                //calculate network info from network instance
+                // Calculate network info from network instance
                 let networkData = standardNetworkData(network)
                 
-                //ssid identation
-                print(spaces(31-network.ssid!.count), terminator:"")
+                // If not an IBSS network
+                if(!networkData.ibss){
+                    printNetworkData(networkData)
+                } else {
+                    // Otherwise add to ibss network array:
+                    ibssNetworks.append(networkData)
+                }
+            }
+            
+            // Print IBSS network info if there are any IBSS networks
+            if(ibssNetworks.count > 0) {
+                let infoString = ibssNetworks.count == 1 ? " IBSS network found:" : " IBSS networks found:"
+                print("\n\(ibssNetworks.count)"+infoString)
+                printStandardTableHeader ()
                 
-                //print retrieved data table
-                print(  networkData.ssid,
-                        networkData.bssid,
-                        "\(networkData.rssi)\(spaces(3-String(networkData.rssi).count))",
-                    "\(networkData.channel)\(spaces(6-String(networkData.channel).count))",
-                    networkData.ht ? "Y " : "N ",
-                    "\(networkData.cc)",
-                    networkData.security, separator: " ")
+                // Print IBSS network data
+                ibssNetworks.forEach { (ibssNetworkData) in
+                    printNetworkData(ibssNetworkData)
+                }
             }
         } catch {
-            //In case no networks are found
+            // In case no networks are found
             print("No Networks Found!")
         }
     }
