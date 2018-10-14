@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E32C0942173B1C600F820BA /* errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32C0932173B1C600F820BA /* errors.swift */; };
+		2E355A2321660A4B002D68FC /* associate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E355A2221660A4B002D68FC /* associate.swift */; };
 		2E8DBFF12112F74000550BE2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DBFF02112F74000550BE2 /* main.swift */; };
 		2E8DBFF82112F77E00550BE2 /* usageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DBFF72112F77E00550BE2 /* usageInfo.swift */; };
 		2E8DBFFA2112F7A200550BE2 /* scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8DBFF92112F7A200550BE2 /* scanner.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E32C0932173B1C600F820BA /* errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errors.swift; sourceTree = "<group>"; };
+		2E355A2221660A4B002D68FC /* associate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = associate.swift; sourceTree = "<group>"; };
 		2E8DBFED2112F74000550BE2 /* wifiScanner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wifiScanner; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8DBFF02112F74000550BE2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2E8DBFF72112F77E00550BE2 /* usageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usageInfo.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				2E8DBFF02112F74000550BE2 /* main.swift */,
 				2E8DBFF72112F77E00550BE2 /* usageInfo.swift */,
 				2E8DBFF92112F7A200550BE2 /* scanner.swift */,
+				2E355A2221660A4B002D68FC /* associate.swift */,
+				2E32C0932173B1C600F820BA /* errors.swift */,
 			);
 			path = wifiScanner;
 			sourceTree = "<group>";
@@ -100,6 +106,7 @@
 				TargetAttributes = {
 					2E8DBFEC2112F74000550BE2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -127,6 +134,8 @@
 			files = (
 				2E8DBFFA2112F7A200550BE2 /* scanner.swift in Sources */,
 				2E8DBFF12112F74000550BE2 /* main.swift in Sources */,
+				2E32C0942173B1C600F820BA /* errors.swift in Sources */,
+				2E355A2321660A4B002D68FC /* associate.swift in Sources */,
 				2E8DBFF82112F77E00550BE2 /* usageInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +261,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -261,7 +270,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

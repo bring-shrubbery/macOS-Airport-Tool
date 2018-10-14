@@ -39,7 +39,7 @@ class standardNetworkData {
         self.rssi = network.rssiValue
         
         // Set CHANNEL
-        self.channel = network.wlanChannel.channelNumber
+        self.channel = network.wlanChannel?.channelNumber ?? 11
         
         // Set High Throughput
         self.ht = network.supportsPHYMode(CWPHYMode.mode11n)
